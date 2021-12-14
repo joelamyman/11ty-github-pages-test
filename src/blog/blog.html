@@ -1,0 +1,28 @@
+---
+title: Welcome to the A11Y publishing test
+pagination:
+  data: collections.blog
+  size: 10
+  alias: posts
+---
+{% extends "_layouts/base.html" %}
+
+{% block mainContent %}
+{% for post in posts %}
+  <div>
+    <h2><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
+    <p>This article relates to:</p>
+    <ul>
+      {% for tag in post.data.tags %}
+        {% if tag == "awareness" %}
+        <li>Informing people of our services and ways of working</li>
+        {% endif %}
+        {% if tag == "knowledgeSharing" %}
+        <li>Providing knowledge to the wider a11y community and invite feedback to improve our way of working</li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+
+{% endfor %}
+{% endblock %} 

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8">
+    <title>Welcome to the A11Y publishing test - A11Y Publishing Test</title>
+    <style>
+      * {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.3;
+}
+
+h1 {
+  font-size: 3.052rem;
+}
+
+h2 {
+  font-size: 2.441rem;
+}
+
+p {
+  font-size: 1.25rem;
+}
+
+body {
+  display: grid;
+  grid-template-areas: "skip-link"
+                       "header"
+                       "main"
+                       "footer";
+  grid-template-rows: auto auto 1fr auto;
+  margin: 0;
+  min-height: 100vh;
+}
+
+main {
+  font-size: 1.25rem;
+  margin: 0 auto;
+  max-width: 80ch;
+  max-width: 100vw;
+  width: 100%;
+  grid-area: main;
+  padding: 0.5rem 2rem;
+}
+
+header, footer {
+  grid-area: header;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav {
+  height: min-content;
+}
+
+.c-nav {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  margin: 0.5rem 1rem;
+  padding: 0;
+}
+
+.c-nav__item {
+  padding: 0.5rem 1rem;
+}
+
+footer {
+  grid-area: footer;
+}
+
+.c-skip_link {
+  grid-area: skip-link;
+  position: absolute;
+  top: -999px;
+}
+
+.c-skip_link:focus {
+  position: relative;
+  top: 0rem;
+}
+    </style>
+  </head>
+  <body>
+    <a href="#main" class="c-skip_link">Skip to main content</a>
+    <header>
+      <p>A11Y Publishing Test</p>
+      <nav>
+        <ul class="c-nav">
+          <li class="c-nav__item"><a href="/">Home</a></li>
+          <li class="c-nav__item"><a href="/blog/">Blog</a></li>
+          <li class="c-nav__item">About us</li>
+        </ul>
+      </nav>
+    </header>
+    <main id="main">
+      <h1>Welcome to the A11Y publishing test</h1>
+      
+        <p>This site is a demonstration of how we could use GitHub Pages + 11ty for publishing our team's content.</p>
+<p>This page has been generated using 11ty to combine a markdown file (containing this content) with a templated page structure. This means we can add resources in markdown and have them automatically wrapped with our accessible theme, creating a light-weight static site that we have control over.</p>
+
+       
+    </main>
+    <footer>
+      <nav>
+        <a href="#">Accessibility statement</a>
+      </nav>
+    </footer>
+  </body>
+</html>
