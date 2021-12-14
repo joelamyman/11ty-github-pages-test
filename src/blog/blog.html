@@ -10,7 +10,7 @@ pagination:
 {% block mainContent %}
 {% for post in posts %}
   <div>
-    <h2><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
+    <h2><a href="{{ post.url | url }}">{{ post.data.title }}</a></h2>
     <p>This article relates to:</p>
     <ul>
       {% for tag in post.data.tags %}
