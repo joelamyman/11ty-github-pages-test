@@ -1,0 +1,40 @@
+{% extends "_layouts/base.html" %}
+
+{% block breadcrumbs %}
+  <ol class="c-breadcrumbs">
+    <li class="c-breadcrumbs__list-item">
+      <a href="{{ '/' | url }}" class="c-breadcrumbs__link">Home</a>
+    </li>
+    <li class="c-breadcrumbs__list-item">
+      <a href="{{ '/blog/' | url }}" class="c-breadcrumbs__link">Blog</a>
+    </li>
+    <li class="c-breadcrumbs__list-item">
+      <a href="{{ url | url }}" class="c-breadcrumbs__link" aria-current="page">{{ title }}</a>
+    </li>
+  </ol>
+{% endblock %}
+
+{% block mainContent %}
+  
+  <p class="c-blog__category">This article relates to 
+    {% for tag in tags %}
+      {% if tag == "awareness" %}
+      <a href="#">Ways of working</a>
+      {% endif %}
+      {% if tag == "knowledgeSharing" %}
+      <a href="#">Knowledge sharing</a>
+      {% endif %}
+    {% endfor %}
+  </p>
+
+  <div class="c-blog__content">
+    {{ content | safe }}
+  </div>
+  
+  <p class="c-blog__author">Written by 
+    {% for authors in author %}
+    <a href="#">{{authors}}</a>{% if loop.last %}{% else %}{% if loop.index == loop.length-1 %}<span> and </span>{% else %}<span>, </span>{% endif %}{% endif %}
+    {% endfor %}
+  </p>
+
+{% endblock %} 

@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Welcome to the A11Y publishing test - A11Y Publishing Test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
       /* Box sizing rules */
 *,
@@ -107,13 +108,13 @@ h4 {
   margin: auto auto 1.25rem auto;
 }
 
-p {
+p, li {
   font-size: 1.25rem;
 }
 
 a {
   text-decoration: underline;
-  text-decoration-thickness: 0.2em;
+  text-decoration-thickness: 0.15em;
 }
 
 a:hover {
@@ -125,7 +126,7 @@ a:focus {
   color: #0b0c0c;
   text-decoration: none;
   outline: 3px solid transparent;
-  box-shadow: 0 -0.2em #fd0,0 0.2em #0b0c0c;
+  box-shadow: 0 -0.2em #fd0,0 0.1em #0b0c0c;
 }
 
 body {
@@ -156,14 +157,14 @@ nav {
   display: flex;
   flex-direction: row;
   list-style: none;
-  margin: 0.5rem 1rem;
+  margin: 0;
   padding: 0;
 }
 
 .c-nav__item {
   display: block;
   color: #fff;
-  padding: 0.5rem 1rem;
+  padding: 1rem;
 
 }
 
@@ -193,6 +194,7 @@ footer {
   color: #fff;
   font-weight: bold;
   text-decoration: none;
+  padding: 1rem 1rem 1rem 0;
 }
 
 .c-header__site-name:hover {
@@ -205,6 +207,7 @@ footer {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .c-main {
@@ -256,6 +259,72 @@ footer {
 .c-blog-card__link {
   display: block;
 }
+
+.c-blog__content {
+  margin: 3rem 0;
+}
+
+table {
+  border-collapse: collapse;
+  border: 0.1rem solid #000;
+  max-width: 100%;
+  overflow-x: scroll;
+  margin-top: 1.875rem;
+  margin-bottom: 1.875rem;
+}
+
+th, td {
+  border: 0.1rem solid #000;
+  padding: 0.5rem 1rem;
+}
+
+blockquote {
+  display: block;
+  border-left: 0.5rem solid #b1b4b6;
+  padding: 1rem;
+}
+
+pre {
+  padding: 1rem 2rem;
+  border: 0.1rem solid #b1b4b6;
+  max-width: 100%;
+  overflow-x: scroll;
+}
+
+code {
+  font-family: monospace;
+}
+
+.c-breadcrumbs {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+}
+
+.c-breadcrumbs__list-item {
+  margin-top: 0;
+  padding: 0.5rem 1rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.c-breadcrumbs__list-item::after {
+  display: block;
+  height: 1rem;
+  width: 1rem;
+  content: ">";
+  padding-left: 1rem;
+}
+
+.c-breadcrumbs__list-item:first-of-type {
+  padding-left: 0;
+}
+
+.c-breadcrumbs__list-item:last-of-type::after {
+  content: "";
+}
     </style>
   </head>
   <body>
@@ -273,6 +342,8 @@ footer {
     </header>
     <main id="main" class="c-main">
       <div class="[ c-main__wrapper ] [ u-width-wrapper u-flow ]">
+        
+        
         <h1>Welcome to the A11Y publishing test</h1>
         
           <p>This site is a demonstration of how we could use GitHub Pages + 11ty for publishing our team's content.</p>

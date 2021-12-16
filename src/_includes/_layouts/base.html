@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>{{title}} - {{ site.name }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
       {% include "css/reset/reset.css" %}
       {% include "css/test.css" %}
@@ -23,6 +24,8 @@
     </header>
     <main id="main" class="c-main">
       <div class="[ c-main__wrapper ] [ u-width-wrapper u-flow ]">
+        {% block breadcrumbs %}
+        {% endblock %}
         <h1>{{ title }}</h1>
         {% block mainContent %}
           {{ content | safe }}
