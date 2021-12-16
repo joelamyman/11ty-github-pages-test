@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8">
+    <title>Blog - A11Y Publishing Test</title>
+    <style>
+      /* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+      * {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.3;
+}
+
+h1 {
+  font-size: 3.052rem;
+  font-weight: bold;
+  margin: auto auto 3.125rem auto;
+}
+
+h2 {
+  font-size: 2.441rem;
+  font-weight: bold;
+  margin: auto auto 1.875rem auto;
+}
+
+h3 {
+  font-size: 1.953rem;
+  font-weight: bold;
+  margin: auto auto 1.25rem auto;
+}
+
+h4 {
+  font-size: 1.563rem;
+  font-weight: bold;
+  margin: auto auto 1.25rem auto;
+}
+
+p {
+  font-size: 1.25rem;
+}
+
+a {
+  text-decoration: underline;
+  text-decoration-thickness: 0.2em;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:focus {
+  background-color: #fd0;
+  color: #0b0c0c;
+  text-decoration: none;
+  outline: 3px solid transparent;
+  box-shadow: 0 -0.2em #fd0,0 0.2em #0b0c0c;
+}
+
+body {
+  display: grid;
+  grid-template-areas: "skip-link"
+                       "header"
+                       "main"
+                       "footer";
+  grid-template-rows: auto auto 1fr auto;
+  margin: 0;
+  min-height: 100vh;
+}
+
+main {
+  font-size: 1.25rem;
+  margin: 0 auto;
+  max-width: 80ch;
+  max-width: 100vw;
+  width: 100%;
+  grid-area: main;
+}
+
+nav {
+  height: min-content;
+}
+
+.c-nav {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  margin: 0.5rem 1rem;
+  padding: 0;
+}
+
+.c-nav__item {
+  display: block;
+  color: #fff;
+  padding: 0.5rem 1rem;
+
+}
+
+footer {
+  grid-area: footer;
+}
+
+.c-skip_link {
+  grid-area: skip-link;
+  position: absolute;
+  top: -999px;
+}
+
+.c-skip_link:focus {
+  position: relative;
+  top: 0rem;
+}
+
+.c-header {
+  background-color: #0b0c0c;
+  color: #fff;
+  grid-area: header;
+}
+
+.c-header__site-name {
+  font-size: 1.5rem;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.c-header__site-name:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 0.2em;
+}
+
+.c-header__wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.c-main {
+  padding: 1.875rem 0 3.125rem 0;
+}
+
+.c-footer {
+  background-color: #f3f2f1;
+  color: #0b0c0c;
+}
+
+.u-width-wrapper {
+  max-width: 60rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 2rem;
+  width: 100%;
+}
+
+.u-visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  clip: rect(0 0 0 0) !important;
+  -webkit-clip-path: inset(50%) !important;
+  clip-path: inset(50%) !important;
+  border: 0 !important;
+  white-space: nowrap !important;
+}
+
+.u-flow * + * {
+  margin-top: 1rem;
+}
+
+.c-blog-card {
+  border-top: 0.1rem solid #b1b4b6;
+  padding: 1.875rem 0;
+  margin-top: 0;
+}
+
+.c-blog-card__summary, .c-blog-card__link {
+  font-size: 1.563rem;
+  margin: 1.875rem 0;
+}
+
+.c-blog-card__link {
+  display: block;
+}
+    </style>
+  </head>
+  <body>
+    <a href="#main" class="c-skip_link">Skip to main content</a>
+    <header class="c-header">
+      <div class="[ c-header__wrapper ] [ u-width-wrapper ]">
+        <a class="c-header__site-name" href="/">A11Y Publishing Test</a>
+        <nav>
+          <ul class="c-nav">
+            <li><a href="#" class="c-nav__item">About us</a></li>
+            <li><a class="c-nav__item" href="/blog/">Blog</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main id="main" class="c-main">
+      <div class="[ c-main__wrapper ] [ u-width-wrapper u-flow ]">
+        <h1>Blog</h1>
+        
+
+  <div class="c-blog-card">
+    <h2 class="c-blog-card__title"><a href="/blog/content/test-post/">Awareness blog post</a></h2>
+    <p class="c-blog-card__category">This article relates to 
+      
+        
+        <a href="#">Ways of working</a>
+        
+        
+      
+        
+        
+      
+    </p>
+    <p class="c-blog-card__summary">
+    
+    </p>
+    <a href="/blog/content/test-post/" class="c-blog-card__link">Read Awareness blog post</a>
+    <p class="c-blog-card__author">Written by 
+      
+      <a href="#">Joe Lamyman</a><span>, </span>
+      
+      <a href="#">Martin Glancy</a><span> and </span>
+      
+      <a href="#">A11y team</a>
+      
+    </p>
+  </div>
+
+
+  <div class="c-blog-card">
+    <h2 class="c-blog-card__title"><a href="/blog/content/another-test-post/">Sharing knowledge with a11y community</a></h2>
+    <p class="c-blog-card__category">This article relates to 
+      
+        
+        <a href="#">Ways of working</a>
+        
+        
+      
+        
+        
+        <a href="#">Knowledge sharing</a>
+        
+      
+        
+        
+      
+    </p>
+    <p class="c-blog-card__summary">
+    This is a blog post that provides some of the granular lessons that we have learnt about a really specific feature, please provide feedback if we have missed anything.
+    </p>
+    <a href="/blog/content/another-test-post/" class="c-blog-card__link">Read Sharing knowledge with a11y community</a>
+    <p class="c-blog-card__author">Written by 
+      
+      <a href="#">Joe Lamyman</a>
+      
+    </p>
+  </div>
+
+
+  <div class="c-blog-card">
+    <h2 class="c-blog-card__title"><a href="/blog/content/live-demo/">Live demo post</a></h2>
+    <p class="c-blog-card__category">This article relates to 
+      
+        
+        <a href="#">Ways of working</a>
+        
+        
+      
+        
+        
+      
+    </p>
+    <p class="c-blog-card__summary">
+    
+    </p>
+    <a href="/blog/content/live-demo/" class="c-blog-card__link">Read Live demo post</a>
+    <p class="c-blog-card__author">Written by 
+      
+    </p>
+  </div>
+
+
+  <div class="c-blog-card">
+    <h2 class="c-blog-card__title"><a href="/blog/content/test/">Live test</a></h2>
+    <p class="c-blog-card__category">This article relates to 
+      
+        
+        <a href="#">Ways of working</a>
+        
+        
+      
+        
+        
+      
+    </p>
+    <p class="c-blog-card__summary">
+    
+    </p>
+    <a href="/blog/content/test/" class="c-blog-card__link">Read Live test</a>
+    <p class="c-blog-card__author">Written by 
+      
+    </p>
+  </div>
+
+
+  <div class="c-blog-card">
+    <h2 class="c-blog-card__title"><a href="/blog/content/post-from-web-ui/">Creating this post from the web UI</a></h2>
+    <p class="c-blog-card__category">This article relates to 
+      
+        
+        
+        <a href="#">Knowledge sharing</a>
+        
+      
+        
+        
+      
+    </p>
+    <p class="c-blog-card__summary">
+    
+    </p>
+    <a href="/blog/content/post-from-web-ui/" class="c-blog-card__link">Read Creating this post from the web UI</a>
+    <p class="c-blog-card__author">Written by 
+      
+      <a href="#">Joe Lamyman</a><span> and </span>
+      
+      <a href="#">Martin Glancy</a>
+      
+    </p>
+  </div>
+
+
+  <div class="c-blog-card">
+    <h2 class="c-blog-card__title"><a href="/blog/content/another-ui-post/">Another UI post</a></h2>
+    <p class="c-blog-card__category">This article relates to 
+      
+        
+        
+        <a href="#">Knowledge sharing</a>
+        
+      
+        
+        
+      
+    </p>
+    <p class="c-blog-card__summary">
+    Testing uploading a file with the GitHub web UI again.
+    </p>
+    <a href="/blog/content/another-ui-post/" class="c-blog-card__link">Read Another UI post</a>
+    <p class="c-blog-card__author">Written by 
+      
+      <a href="#">A11y team</a>
+      
+    </p>
+  </div>
+
+
+  <div class="c-blog-card">
+    <h2 class="c-blog-card__title"><a href="/blog/content/martin-test/">Martin test</a></h2>
+    <p class="c-blog-card__category">This article relates to 
+      
+        
+        
+      
+    </p>
+    <p class="c-blog-card__summary">
+    
+    </p>
+    <a href="/blog/content/martin-test/" class="c-blog-card__link">Read Martin test</a>
+    <p class="c-blog-card__author">Written by 
+      
+      <a href="#">Martin Glancy</a>
+      
+    </p>
+  </div>
+
+
+
+      </div> 
+    </main>
+    <footer class="c-footer">
+      <div class="[ c-footer__wrapper ] [ u-width-wrapper ]">
+        <h2 class="u-visually-hidden">Useful Links</h2>
+        <nav>
+        <ul>
+          <li><a href="#">Accessibility statement</a></li>
+        </ul>
+        </nav>
+      </div> 
+    </footer>
+  </body>
+</html>

@@ -1,5 +1,5 @@
 ---
-title: Welcome to the A11Y publishing test
+title: Blog
 pagination:
   data: collections.blog
   size: 10
@@ -9,19 +9,27 @@ pagination:
 
 {% block mainContent %}
 {% for post in posts %}
-  <div>
-    <h2><a href="{{ post.url | url }}">{{ post.data.title }}</a></h2>
-    <p>This article relates to:</p>
-    <ul>
+  <div class="c-blog-card">
+    <h2 class="c-blog-card__title"><a href="{{ post.url | url }}">{{ post.data.title }}</a></h2>
+    <p class="c-blog-card__category">This article relates to 
       {% for tag in post.data.tags %}
         {% if tag == "awareness" %}
-        <li>Informing people of our services and ways of working</li>
+        <a href="#">Ways of working</a>
         {% endif %}
         {% if tag == "knowledgeSharing" %}
-        <li>Providing knowledge to the wider a11y community and invite feedback to improve our way of working</li>
+        <a href="#">Knowledge sharing</a>
         {% endif %}
       {% endfor %}
-    </ul>
+    </p>
+    <p class="c-blog-card__summary">
+    {{ post.data.summary }}
+    </p>
+    <a href="{{ post.url | url }}" class="c-blog-card__link">Read {{ post.data.title }}</a>
+    <p class="c-blog-card__author">Written by 
+      {% for author in post.data.author %}
+      <a href="#">{{author}}</a>{% if loop.last %}{% else %}{% if loop.index == loop.length-1 %}<span> and </span>{% else %}<span>, </span>{% endif %}{% endif %}
+      {% endfor %}
+    </p>
   </div>
 
 {% endfor %}

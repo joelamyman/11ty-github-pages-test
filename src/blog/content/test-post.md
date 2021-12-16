@@ -1,5 +1,6 @@
 ---
 title: Awareness blog post
+author: ["Joe Lamyman", "Martin Glancy", "A11y team"]
 tags: 
     - awareness
     - blog

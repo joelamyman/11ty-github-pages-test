@@ -1,5 +1,6 @@
 ---
 title: Creating this post from the web UI
+author: ["Joe Lamyman", "Martin Glancy"]
 tags: 
     - knowledgeSharing
     - blog

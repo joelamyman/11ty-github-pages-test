@@ -1,5 +1,6 @@
 ---
 title: Martin test
+author: ["Martin Glancy"]
 tags: 
     - blog
 ---
