@@ -1,11 +1,24 @@
 ---
-title: Blog
+title: 'Tag Archive'
 pagination:
-  data: collections.blog
-  size: 10
-  alias: posts
+  data: collections
+  size: 1
+  alias: tag
+  filter: ['all']
+permalink: '/tag/{{ tag | slug }}/'
 ---
 {% extends "_layouts/base.html" %}
+
+{% if tag == "awareness" %}
+  {% set tagDescriptor = "Ways of working" %}
+{% endif %}
+{% if tag == "knowledgeSharing" %}
+  {% set tagDescriptor = "Knowledge sharing" %}
+{% endif %}
+
+{% set title %}
+Content relating to {{ tagDescriptor }}
+{% endset %}
 
 {% block breadcrumbs %}
   <ol class="c-breadcrumbs">
@@ -13,23 +26,25 @@ pagination:
       <a href="{{ '/' | url }}" class="c-breadcrumbs__link">Home</a>
     </li>
     <li class="c-breadcrumbs__list-item">
-      <a href="{{ '/blog/' | url }}" class="c-breadcrumbs__link" aria-current="page">Blog</a>
+      <a href="{{ '/blog/' | url }}" class="c-breadcrumbs__link">Blog</a>
+    </li>
+    <li class="c-breadcrumbs__list-item">
+      <a href="{{ page.url | url }}" class="c-breadcrumbs__link" aria-current="page">Content relating to {{ tagDescriptor }}</a>
     </li>
   </ol>
 {% endblock %}
 
+{% set postListItems = collections[tag] %}
+
 {% block mainContent %}
-  <p>Below is content that we have published.</p>
-  {# Loop through all of the blog posts #}
-  {% for post in posts | reverse  %}
+  {% for post in postListItems | reverse %}
     {# Stores data about the post into variables used in the post-summary partial #}
     {% set postTitle = post.data.title %}
     {% set postTags = post.data.tags %}
     {% set postSummary = post.data.summary %}
     {% set postUrl = post.url %}
     {% set postAuthors = post.data.author %}
-    {% set postPublished = post.date %}
     {# Includes the post-summary partial code, putting the post's data into a reusable template #}
     {% include "_partials/post-summary.njk" %}
   {% endfor %}
-{% endblock %} 
+{% endblock %}

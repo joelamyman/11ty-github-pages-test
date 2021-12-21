@@ -2,8 +2,6 @@
 title: Martin test
 author: ["Martin Glancy"]
 summary: This is a paragraph.
-tags: 
-    - blog
 ---
   
   # Heading 1

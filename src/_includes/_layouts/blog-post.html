@@ -16,15 +16,23 @@
 
 {% block mainContent %}
   
-  <p class="c-blog__category">This article relates to 
+  <p class="c-blog-card__category">This article relates to 
+    {# Create a blank array to hold the tag names #}
+    {% set tagData = [] %}
+    {# Loop through the tags data and store the descriptor in the array #}
     {% for tag in tags %}
       {% if tag == "awareness" %}
-      <a href="#">Ways of working</a>
+        {% set items = (tagData.push("Ways of working"), tagData) %}
       {% endif %}
       {% if tag == "knowledgeSharing" %}
-      <a href="#">Knowledge sharing</a>
+        {% set items = (tagData.push("Knowledge sharing"), tagData) %}
       {% endif %}
     {% endfor %}
+    {# Loop through the array and add the descriptor to the DOM #}
+    {% for tagDescriptor in tagData %}
+    <a href="#">{{tagDescriptor}}</a>{% if loop.last %}{% else %}{% if loop.index == loop.length-1 %}<span> and </span>{% else %}<span>, </span>{% endif %}{% endif %}
+    {% endfor %}
+    {{ items }}
   </p>
 
   <div class="c-blog__content">
@@ -33,8 +41,9 @@
   
   <p class="c-blog__author">Written by 
     {% for authors in author %}
-    <a href="#">{{authors}}</a>{% if loop.last %}{% else %}{% if loop.index == loop.length-1 %}<span> and </span>{% else %}<span>, </span>{% endif %}{% endif %}
+    <a href="#">{{authors}}</a>{% if loop.last %}.{% else %}{% if loop.index == loop.length-1 %}<span> and </span>{% else %}<span>, </span>{% endif %}{% endif %}
     {% endfor %}
+    Published {{ page.date | postDate }}.
   </p>
 
 {% endblock %} 

@@ -219,6 +219,19 @@ footer {
   color: #0b0c0c;
 }
 
+.c-footer ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin: 0;
+  padding: 1rem 1rem 1rem 0;
+}
+
+.c-footer li {
+  padding: 0.5rem 0;
+  margin: 0.25rem 0;
+}
+
 .u-width-wrapper {
   max-width: 60rem;
   margin-left: auto;
@@ -245,10 +258,25 @@ footer {
   margin-top: 1rem;
 }
 
+.u-flow * + h2 {
+  margin-top: 3rem;
+}
+.u-flow * + h3, .u-flow * + h4, .u-flow * + h5 {
+  margin-top: 2rem;
+}
+
 .c-blog-card {
   border-top: 0.1rem solid #b1b4b6;
   padding: 1.875rem 0;
   margin-top: 0;
+}
+
+.c-blog-card:first-of-type {
+  margin-top: 1.875rem;
+}
+
+.c-blog-card:last-of-type {
+  border-bottom: 0.1rem solid #b1b4b6;
 }
 
 .c-blog-card__summary, .c-blog-card__link {
@@ -343,191 +371,329 @@ code {
     <main id="main" class="c-main">
       <div class="[ c-main__wrapper ] [ u-width-wrapper u-flow ]">
         
-        
+  <ol class="c-breadcrumbs">
+    <li class="c-breadcrumbs__list-item">
+      <a href="/" class="c-breadcrumbs__link">Home</a>
+    </li>
+    <li class="c-breadcrumbs__list-item">
+      <a href="/blog/" class="c-breadcrumbs__link" aria-current="page">Blog</a>
+    </li>
+  </ol>
+
         <h1>Blog</h1>
         
-
-  <div class="c-blog-card">
-    <h2 class="c-blog-card__title"><a href="/blog/content/test-post/">Awareness blog post</a></h2>
-    <p class="c-blog-card__category">This article relates to 
+  <p>Below is content that we have published.</p>
+  
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="c-blog-card">
+  <h2 class="c-blog-card__title"><a href="/blog/content/martin-test/">Martin test</a></h2>
+  <p class="c-blog-card__category">This article relates to 
+    
+    
+    
+    
+    
+    
+    
+    
+  </p>
+  <p class="c-blog-card__summary">
+  This is a paragraph.
+  </p>
+  <a href="/blog/content/martin-test/" class="c-blog-card__link">Read Martin test</a>
+  <p class="c-blog-card__author">Written by 
+    
+    
+    <a href="
+      /authors/martin-glancy/
+    ">Martin Glancy</a>.
+    
+    Published 16 December 2021.
+  </p>
+</div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="c-blog-card">
+  <h2 class="c-blog-card__title"><a href="/blog/content/another-ui-post/">Another UI post</a></h2>
+  <p class="c-blog-card__category">This article relates to 
+    
+    
+    
+    
+      
       
         
-        <a href="#">Ways of working</a>
-        
-        
+      
+    
+    
+    
+    
+    <a href="/tag/knowledgesharing/">Knowledge sharing</a>
+    
+    
+  </p>
+  <p class="c-blog-card__summary">
+  Testing uploading a file with the GitHub web UI again.
+  </p>
+  <a href="/blog/content/another-ui-post/" class="c-blog-card__link">Read Another UI post</a>
+  <p class="c-blog-card__author">Written by 
+    
+    
+    <a href="
+      /authors/a11y-team/
+    ">A11y team</a>.
+    
+    Published 16 December 2021.
+  </p>
+</div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="c-blog-card">
+  <h2 class="c-blog-card__title"><a href="/blog/content/post-from-web-ui/">Creating this post from the web UI</a></h2>
+  <p class="c-blog-card__category">This article relates to 
+    
+    
+    
+    
+      
       
         
-        
       
-    </p>
-    <p class="c-blog-card__summary">
-    This is a blog post that will raise awareness of the work that our accessibility team does.
-    </p>
-    <a href="/blog/content/test-post/" class="c-blog-card__link">Read Awareness blog post</a>
-    <p class="c-blog-card__author">Written by 
-      
-      <a href="#">Joe Lamyman</a><span>, </span>
-      
-      <a href="#">Martin Glancy</a><span> and </span>
-      
-      <a href="#">A11y team</a>
-      
-    </p>
-  </div>
-
-
-  <div class="c-blog-card">
-    <h2 class="c-blog-card__title"><a href="/blog/content/another-test-post/">Sharing knowledge with a11y community</a></h2>
-    <p class="c-blog-card__category">This article relates to 
-      
-        
-        <a href="#">Ways of working</a>
-        
-        
-      
-        
-        
-        <a href="#">Knowledge sharing</a>
-        
-      
-        
-        
-      
-    </p>
-    <p class="c-blog-card__summary">
-    This is a blog post that provides some of the granular lessons that we have learnt about a really specific feature, please provide feedback if we have missed anything.
-    </p>
-    <a href="/blog/content/another-test-post/" class="c-blog-card__link">Read Sharing knowledge with a11y community</a>
-    <p class="c-blog-card__author">Written by 
-      
-      <a href="#">Joe Lamyman</a>
-      
-    </p>
-  </div>
-
-
-  <div class="c-blog-card">
-    <h2 class="c-blog-card__title"><a href="/blog/content/live-demo/">Live demo post</a></h2>
-    <p class="c-blog-card__category">This article relates to 
+    
+    
+    
+    
+    <a href="/tag/knowledgesharing/">Knowledge sharing</a>
+    
+    
+  </p>
+  <p class="c-blog-card__summary">
+  I am testing just using GitHub&#39;s Web UI to create this file and upon creation, see if the action takes place that will build the site and update the GitHub pages version.
+  </p>
+  <a href="/blog/content/post-from-web-ui/" class="c-blog-card__link">Read Creating this post from the web UI</a>
+  <p class="c-blog-card__author">Written by 
+    
+    
+    <a href="
+      /authors/joe-lamyman/
+    ">Joe Lamyman</a><span> and </span>
+    
+    
+    <a href="
+      /authors/martin-glancy/
+    ">Martin Glancy</a>.
+    
+    Published 15 December 2021.
+  </p>
+</div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="c-blog-card">
+  <h2 class="c-blog-card__title"><a href="/blog/content/test/">Live test</a></h2>
+  <p class="c-blog-card__category">This article relates to 
+    
+    
+    
+    
       
         
-        <a href="#">Ways of working</a>
-        
-        
+      
+      
+    
+    
+    
+    
+    <a href="/tag/awareness/">Ways of working</a>
+    
+    
+  </p>
+  <p class="c-blog-card__summary">
+  This is a blog post that will raise awareness of the work that our accessibility team does.
+  </p>
+  <a href="/blog/content/test/" class="c-blog-card__link">Read Live test</a>
+  <p class="c-blog-card__author">Written by 
+    
+    
+    <a href="
+      /authors/a11y-team/
+    ">A11y team</a>.
+    
+    Published 13 December 2021.
+  </p>
+</div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="c-blog-card">
+  <h2 class="c-blog-card__title"><a href="/blog/content/live-demo/">Live demo post</a></h2>
+  <p class="c-blog-card__category">This article relates to 
+    
+    
+    
+    
       
         
-        
       
-    </p>
-    <p class="c-blog-card__summary">
-    This is a live demo.
-    </p>
-    <a href="/blog/content/live-demo/" class="c-blog-card__link">Read Live demo post</a>
-    <p class="c-blog-card__author">Written by 
       
-      <a href="#">Joe Lamyman</a>
-      
-    </p>
-  </div>
-
-
-  <div class="c-blog-card">
-    <h2 class="c-blog-card__title"><a href="/blog/content/test/">Live test</a></h2>
-    <p class="c-blog-card__category">This article relates to 
-      
-        
-        <a href="#">Ways of working</a>
-        
-        
-      
-        
-        
-      
-    </p>
-    <p class="c-blog-card__summary">
-    This is a blog post that will raise awareness of the work that our accessibility team does.
-    </p>
-    <a href="/blog/content/test/" class="c-blog-card__link">Read Live test</a>
-    <p class="c-blog-card__author">Written by 
-      
-      <a href="#">A11y team</a>
-      
-    </p>
-  </div>
-
-
-  <div class="c-blog-card">
-    <h2 class="c-blog-card__title"><a href="/blog/content/post-from-web-ui/">Creating this post from the web UI</a></h2>
-    <p class="c-blog-card__category">This article relates to 
+    
+    
+    
+    
+    <a href="/tag/awareness/">Ways of working</a>
+    
+    
+  </p>
+  <p class="c-blog-card__summary">
+  This is a live demo.
+  </p>
+  <a href="/blog/content/live-demo/" class="c-blog-card__link">Read Live demo post</a>
+  <p class="c-blog-card__author">Written by 
+    
+    
+    <a href="
+      /authors/joe-lamyman/
+    ">Joe Lamyman</a>.
+    
+    Published 10 December 2021.
+  </p>
+</div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="c-blog-card">
+  <h2 class="c-blog-card__title"><a href="/blog/content/another-test-post/">Sharing knowledge with a11y community</a></h2>
+  <p class="c-blog-card__category">This article relates to 
+    
+    
+    
+    
       
         
-        
-        <a href="#">Knowledge sharing</a>
-        
+      
+      
+    
+      
       
         
-        
       
-    </p>
-    <p class="c-blog-card__summary">
-    I am testing just using GitHub&#39;s Web UI to create this file and upon creation, see if the action takes place that will build the site and update the GitHub pages version.
-    </p>
-    <a href="/blog/content/post-from-web-ui/" class="c-blog-card__link">Read Creating this post from the web UI</a>
-    <p class="c-blog-card__author">Written by 
-      
-      <a href="#">Joe Lamyman</a><span> and </span>
-      
-      <a href="#">Martin Glancy</a>
-      
-    </p>
-  </div>
-
-
-  <div class="c-blog-card">
-    <h2 class="c-blog-card__title"><a href="/blog/content/another-ui-post/">Another UI post</a></h2>
-    <p class="c-blog-card__category">This article relates to 
-      
-        
-        
-        <a href="#">Knowledge sharing</a>
-        
-      
-        
-        
-      
-    </p>
-    <p class="c-blog-card__summary">
-    Testing uploading a file with the GitHub web UI again.
-    </p>
-    <a href="/blog/content/another-ui-post/" class="c-blog-card__link">Read Another UI post</a>
-    <p class="c-blog-card__author">Written by 
-      
-      <a href="#">A11y team</a>
-      
-    </p>
-  </div>
-
-
-  <div class="c-blog-card">
-    <h2 class="c-blog-card__title"><a href="/blog/content/martin-test/">Martin test</a></h2>
-    <p class="c-blog-card__category">This article relates to 
+    
+    
+    
+    
+    <a href="/tag/awareness/">Ways of working</a><span> and </span>
+    
+    <a href="/tag/knowledgesharing/">Knowledge sharing</a>
+    
+    
+  </p>
+  <p class="c-blog-card__summary">
+  This is a blog post that provides some of the granular lessons that we have learnt about a really specific feature, please provide feedback if we have missed anything.
+  </p>
+  <a href="/blog/content/another-test-post/" class="c-blog-card__link">Read Sharing knowledge with a11y community</a>
+  <p class="c-blog-card__author">Written by 
+    
+    
+    <a href="
+      /authors/joe-lamyman/
+    ">Joe Lamyman</a>.
+    
+    Published 10 December 2021.
+  </p>
+</div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="c-blog-card">
+  <h2 class="c-blog-card__title"><a href="/blog/content/test-post/">Awareness blog post</a></h2>
+  <p class="c-blog-card__category">This article relates to 
+    
+    
+    
+    
       
         
-        
       
-    </p>
-    <p class="c-blog-card__summary">
-    This is a paragraph.
-    </p>
-    <a href="/blog/content/martin-test/" class="c-blog-card__link">Read Martin test</a>
-    <p class="c-blog-card__author">Written by 
       
-      <a href="#">Martin Glancy</a>
-      
-    </p>
-  </div>
-
-
+    
+    
+    
+    
+    <a href="/tag/awareness/">Ways of working</a>
+    
+    
+  </p>
+  <p class="c-blog-card__summary">
+  This is a blog post that will raise awareness of the work that our accessibility team does.
+  </p>
+  <a href="/blog/content/test-post/" class="c-blog-card__link">Read Awareness blog post</a>
+  <p class="c-blog-card__author">Written by 
+    
+    
+    <a href="
+      /authors/joe-lamyman/
+    ">Joe Lamyman</a><span>, </span>
+    
+    
+    <a href="
+      /authors/martin-glancy/
+    ">Martin Glancy</a><span> and </span>
+    
+    
+    <a href="
+      /authors/a11y-team/
+    ">A11y team</a>.
+    
+    Published 10 December 2021.
+  </p>
+</div>
+  
 
       </div> 
     </main>
@@ -536,7 +702,7 @@ code {
         <h2 class="u-visually-hidden">Useful Links</h2>
         <nav>
         <ul>
-          <li><a href="#">Accessibility statement</a></li>
+          <li><a href="/accessibility-statement/">Accessibility statement</a></li>
         </ul>
         </nav>
       </div> 

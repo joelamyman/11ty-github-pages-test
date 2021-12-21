@@ -1,0 +1,35 @@
+<div class="c-blog-card">
+  <h2 class="c-blog-card__title"><a href="{{ postUrl | url }}">{{ postTitle }}</a></h2>
+  <p class="c-blog-card__category">This article relates to 
+    {# Create a blank array to hold the tag names #}
+    {% set tagData = [] %}
+    {# Loop through the tags data and store the descriptor in the array #}
+    {% for tag in postTags %}
+      {% if tag == "awareness" %}
+        {% set items = (tagData.push({'name': "Ways of working", 'tag': tag}), tagData) %}
+      {% endif %}
+      {% if tag == "knowledgeSharing" %}
+        {% set items = (tagData.push({'name': "Knowledge sharing", 'tag': tag}), tagData) %}
+      {% endif %}
+    {% endfor %}
+    
+    {# Loop through the array and add the descriptor to the DOM #}
+    {% for tagDescriptor in tagData %}
+    <a href="/tag/{{ tagDescriptor.tag | slug }}/">{{tagDescriptor.name}}</a>{% if loop.last %}{% else %}{% if loop.index == loop.length-1 %}<span> and </span>{% else %}<span>, </span>{% endif %}{% endif %}
+    {% endfor %}
+    {{ items }}
+  </p>
+  <p class="c-blog-card__summary">
+  {{ postSummary }}
+  </p>
+  <a href="{{ postUrl | url }}" class="c-blog-card__link">Read {{ postTitle }}</a>
+  <p class="c-blog-card__author">Written by 
+    {% for author in postAuthors %}
+    {% set authorNameLink %}
+      /authors/{{ author | slug }}/
+    {% endset %}
+    <a href="{{ authorNameLink | url }}">{{author}}</a>{% if loop.last %}.{% else %}{% if loop.index == loop.length-1 %}<span> and </span>{% else %}<span>, </span>{% endif %}{% endif %}
+    {% endfor %}
+    Published {{ postPublished | postDate }}.
+  </p>
+</div>
