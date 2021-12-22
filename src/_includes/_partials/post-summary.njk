@@ -17,7 +17,6 @@
     {% for tagDescriptor in tagData %}
     <a href="/tag/{{ tagDescriptor.tag | slug | url }}/">{{tagDescriptor.name}}</a>{% if loop.last %}{% else %}{% if loop.index == loop.length-1 %}<span> and </span>{% else %}<span>, </span>{% endif %}{% endif %}
     {% endfor %}
-    {{ items }}
   </p>
   <p class="c-blog-card__summary">
   {{ postSummary }}

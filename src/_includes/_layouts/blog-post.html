@@ -22,17 +22,17 @@
     {# Loop through the tags data and store the descriptor in the array #}
     {% for tag in tags %}
       {% if tag == "awareness" %}
-        {% set items = (tagData.push("Ways of working"), tagData) %}
+        {% set items = (tagData.push({'name': "Ways of working", 'tag': tag}), tagData) %}
       {% endif %}
       {% if tag == "knowledgeSharing" %}
-        {% set items = (tagData.push("Knowledge sharing"), tagData) %}
+        {% set items = (tagData.push({'name': "Knowledge sharing", 'tag': tag}), tagData) %}
       {% endif %}
     {% endfor %}
+    
     {# Loop through the array and add the descriptor to the DOM #}
     {% for tagDescriptor in tagData %}
-    <a href="#">{{tagDescriptor}}</a>{% if loop.last %}{% else %}{% if loop.index == loop.length-1 %}<span> and </span>{% else %}<span>, </span>{% endif %}{% endif %}
+    <a href="/tag/{{ tagDescriptor.tag | slug | url }}/">{{tagDescriptor.name}}</a>{% if loop.last %}{% else %}{% if loop.index == loop.length-1 %}<span> and </span>{% else %}<span>, </span>{% endif %}{% endif %}
     {% endfor %}
-    {{ items }}
   </p>
 
   <div class="c-blog__content">
