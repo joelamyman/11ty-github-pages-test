@@ -331,7 +331,7 @@ code {
 
 .c-breadcrumbs {
   display: flex;
-  flex-direction: row;
+  flex-flow: row wrap;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -340,8 +340,9 @@ code {
 .c-breadcrumbs__list-item {
   display: flex;
   flex-direction: row;
+  margin: 0 0 0 1rem;
   margin-top: 0;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1rem 0.5rem 0;
 }
 
 .c-breadcrumbs__list-item::after {
@@ -526,6 +527,7 @@ code {
         <nav>
         <ul>
           <li><a href="/accessibility-statement/">Accessibility statement</a></li>
+          <li><a href="/sitemap/">Sitemap</a></li>
         </ul>
         </nav>
       </div> 

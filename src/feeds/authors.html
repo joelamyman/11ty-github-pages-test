@@ -5,6 +5,7 @@ pagination:
   alias: author
   filter: ['all']
 permalink: '/authors/{{ author.name | slug }}/'
+eleventyExcludeFromCollections: true
 ---
 {% extends "_layouts/base.html" %}
 
