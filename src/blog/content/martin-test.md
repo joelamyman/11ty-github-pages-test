@@ -1,7 +1,7 @@
 ---
 title: Martin test
-tags: 
-    - blog
+author: ["Martin Glancy"]
+summary: This is a paragraph.
 ---
   
   # Heading 1
