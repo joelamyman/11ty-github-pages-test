@@ -31,7 +31,8 @@
     
     {# Loop through the array and add the descriptor to the DOM #}
     {% for tagDescriptor in tagData %}
-    <a href="/tag/{{ tagDescriptor.tag | slug | url }}/">{{tagDescriptor.name}}</a>{% if loop.last %}{% else %}{% if loop.index == loop.length-1 %}<span> and </span>{% else %}<span>, </span>{% endif %}{% endif %}
+    {% set tagLink = "/tag/" + tagDescriptor.tag | slug + "/" %}
+    <a href="{{ tagLink | url }}/">{{tagDescriptor.name}}</a>{% if loop.last %}{% else %}{% if loop.index == loop.length-1 %}<span> and </span>{% else %}<span>, </span>{% endif %}{% endif %}
     {% endfor %}
   </p>
 
@@ -41,9 +42,7 @@
   
   <p class="c-blog__author">Written by 
     {% for authors in author %}
-    {% set authorNameLink %}
-      /authors/{{ authors | slug }}/
-    {% endset %}
+    {% set authorNameLink = "/authors/" + authors | slug + "/" %}
     <a href="{{ authorNameLink | url }}">{{authors}}</a>{% if loop.last %}.{% else %}{% if loop.index == loop.length-1 %}<span> and </span>{% else %}<span>, </span>{% endif %}{% endif %}
     {% endfor %}
     Published {{ page.date | postDate }}.
