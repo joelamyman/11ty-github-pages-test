@@ -17,6 +17,7 @@ module.exports = function(eleventyConfig) {
   
   return {
     htmlTemplateEngine: "njk",
+    pathPrefix: "https://joelamyman.github.io/11ty-github-pages-test/",
     dir: {
       input: "src",
       output: "docs",
