@@ -14,6 +14,16 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addFilter("postDate", (dateObj) => {
     return DateTime.fromJSDate(dateObj).toLocaleString(DateTime.DATE_FULL);
   });
+
+  // Copy across all images
+  eleventyConfig.addPassthroughCopy("**/*.jpg");
+  eleventyConfig.addPassthroughCopy("**/*.png");
+
+  // Copy across docx files
+  eleventyConfig.addPassthroughCopy("**/*.docx");
+
+  // Copy across PDF files
+  eleventyConfig.addPassthroughCopy("**/*.pdf");
   
   return {
     htmlTemplateEngine: "njk",
