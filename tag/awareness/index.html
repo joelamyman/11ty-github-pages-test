@@ -82,7 +82,15 @@ select {
   }
 }
 
-      * {
+      html {
+  /* For the default link colour */
+  --link-colour: #006726;
+
+  /* For the link hover state */
+  --link-colour-alt: #00521e;
+}
+
+* {
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.3;
@@ -123,17 +131,20 @@ li {
 }
 
 a {
+  color: var(--link-colour);
+  max-width: max-content;
   text-decoration: underline;
   text-decoration-thickness: 0.15em;
 }
 
 a:hover {
-  text-decoration: none;
+  color: var(--link-colour-alt);
+  text-decoration-thickness: 0.3em;
 }
 
 a:focus {
   background-color: #fd0;
-  box-shadow: 0 -0.2em #fd0, 0 0.1em #0b0c0c;
+  box-shadow: 0 -0.2em #fd0, 0 0.3em #0b0c0c;
   color: #0b0c0c;
   outline: 3px solid transparent;
   text-decoration: none;
@@ -172,10 +183,20 @@ nav {
   padding: 0;
 }
 
-.c-nav__item {
+.c-nav__item,
+.c-nav__item:hover {
   color: #fff;
   display: block;
+  max-width: 100%;
   padding: 1rem;
+}
+
+.c-nav__item:focus {
+  color: #000;
+}
+
+.c-nav li:first-of-type a {
+  padding-left: 0;
 }
 
 footer {
@@ -442,7 +463,7 @@ Content relating to Ways of working
     
     <a href="/11ty-github-pages-test/authors/a11y-team/">A11y team</a>.
     
-    Published January 12, 2022.
+    Published January 21, 2022.
   </p>
 </div>
   
@@ -492,7 +513,7 @@ Content relating to Ways of working
     
     <a href="/11ty-github-pages-test/authors/a11y-team/">A11y team</a>.
     
-    Published January 12, 2022.
+    Published January 21, 2022.
   </p>
 </div>
   
@@ -534,7 +555,7 @@ Content relating to Ways of working
     
     <a href="/11ty-github-pages-test/authors/joe-lamyman/">Joe Lamyman</a>.
     
-    Published January 12, 2022.
+    Published January 21, 2022.
   </p>
 </div>
   
@@ -585,7 +606,7 @@ Content relating to Ways of working
     
     <a href="/11ty-github-pages-test/authors/joe-lamyman/">Joe Lamyman</a>.
     
-    Published January 12, 2022.
+    Published January 21, 2022.
   </p>
 </div>
   
