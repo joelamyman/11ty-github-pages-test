@@ -16,6 +16,8 @@
     "stylelint-order": "^5.0.0"
   },
   "dependencies": {
-    "prettier": "^2.5.1"
+    "prettier": "^2.5.1",
+    "follow-redirects": ">=1.14.7",
+    "markdown-it": ">=12.3.2"
   }
 }
