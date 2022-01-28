@@ -16,14 +16,14 @@ module.exports = function(eleventyConfig) {
   });
 
   // Copy across all images
-  eleventyConfig.addPassthroughCopy("**/*.jpg");
-  eleventyConfig.addPassthroughCopy("**/*.png");
+  eleventyConfig.addPassthroughCopy("src/**/*.jpg");
+  eleventyConfig.addPassthroughCopy("src/**/*.png");
 
   // Copy across docx files
-  eleventyConfig.addPassthroughCopy("**/*.docx");
+  eleventyConfig.addPassthroughCopy("src/**/*.docx");
 
   // Copy across PDF files
-  eleventyConfig.addPassthroughCopy("**/*.pdf");
+  eleventyConfig.addPassthroughCopy("src/**/*.pdf");
   
   return {
     htmlTemplateEngine: "njk",

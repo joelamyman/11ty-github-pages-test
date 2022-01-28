@@ -1,5 +1,5 @@
 ---
-title: Blog
+title: Writing
 pagination:
   data: collections.blog
   size: 10
@@ -13,13 +13,13 @@ pagination:
       <a href="{{ '/' | url }}" class="c-breadcrumbs__link">Home</a>
     </li>
     <li class="c-breadcrumbs__list-item">
-      <a href="{{ '/blog/' | url }}" class="c-breadcrumbs__link" aria-current="page">Blog</a>
+      <a href="{{ '/writing/' | url }}" class="c-breadcrumbs__link" aria-current="page">Writing</a>
     </li>
   </ol>
 {% endblock %}
 
 {% block mainContent %}
-  <p>Below is content that we have published.</p>
+  <p>The accessibility team write about accessibility issues that we have encountered. These posts are short, focussed articles which provide our learnings from the work we have done.</p>
   {# Loop through all of the blog posts #}
   {% for post in posts | reverse  %}
     {# Stores data about the post into variables used in the post-summary partial #}
