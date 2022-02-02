@@ -1,3 +1,5 @@
+/* stylelint-disable selector-id-pattern */
+
 /* DEFRA Qualtrics additional CSS */
 
 /* v0.23 */
@@ -154,7 +156,6 @@ input[type="button"]:focus {
 }
 
 /* Hiding the progress bar */
-/* stylelint-disable-next-line selector-id-pattern */
 .Skin #ProgressBar {
   display: none !important;
 }
@@ -185,8 +186,105 @@ input[type="button"]:focus {
 }
 
 /* The following styling affects radio and checkbox elements to ensure that they resemble GDS Design System elements */
+th[scope="col"] .LabelWrapper,
+th[scope="col"].SubQuestionText,
+.slider-container label {
+  font-size: 1.5rem;
+  line-height: 1.25 !important;
+}
+
+th[scope="col"].AnswerText,
+th[scope="row"] label {
+  font-size: 1.1875rem !important;
+  line-height: 1.3158 !important;
+}
+
 .ChoiceStructure .LabelWrapper label {
   border: 0.2rem solid rgba(0 0 0 0%) !important;
+}
+
+.Skin label.SingleAnswer > span::before,
+.Skin label.q-radio::before {
+  box-sizing: border-box;
+  height: 40px !important;
+  left: 1px !important;
+  margin-top: auto !important;
+  position: absolute !important;
+  top: -1px !important;
+  width: 40px !important;
+}
+
+.ChoiceStructure .LabelWrapper label.SingleAnswer > span::before,
+.ChoiceStructure .LabelWrapper label.MultipleAnswer > span::before,
+.Skin label.q-radio,
+.Skin label.q-checkbox {
+  border-color: var(--gds-color-black-primary-default) !important;
+  box-sizing: border-box;
+  height: 2.75rem !important;
+  left: 0;
+  margin-right: 1rem !important;
+  margin-top: 0 !important;
+  top: 0;
+  width: 2.75rem !important;
+}
+
+.ChoiceStructure .LabelWrapper label.MultipleAnswer > span::before,
+.Skin label.q-checkbox::before {
+  border-radius: 0 !important;
+}
+
+.ChoiceStructure .LabelWrapper label.MultipleAnswer > span::after,
+.Skin label.q-checkbox::after {
+  background: transparent;
+  border: solid;
+  border-top-color: red;
+  border-top-color: transparent;
+  border-width: 0 0 0.25rem 0.25rem;
+  box-sizing: border-box;
+  content: "";
+  height: 0.75rem;
+  left: 0.75rem;
+  opacity: 0;
+  position: absolute;
+  top: 0.75rem;
+  transform: rotate(-45deg);
+  width: 1.25rem;
+}
+
+.Skin label.SingleAnswer.q-checked > span::after,
+.Skin label.SingleAnswer.q-checked.q-focused > span::after,
+.Skin label.q-radio.q-checked::after,
+.Skin label.q-radio.q-checked.q-focused::after {
+  background: #0b0c0c;
+  border: 0.625rem solid #0b0c0c;
+  border-radius: 50%;
+  content: "";
+  height: 0;
+  left: 13px;
+  position: absolute;
+  top: 0.7rem;
+  width: 0;
+}
+
+.Skin label.SingleAnswer.q-checked > span::before,
+.Skin label.SingleAnswer.q-checked.q-focused > span::before,
+.Skin label.q-radio.q-checked::before,
+.Skin label.q-radio.q-checked.q-focused::before {
+  animation: none !important;
+  background: none !important;
+  border-width: 2px !important;
+  box-shadow: none !important;
+}
+
+.ChoiceStructure .LabelWrapper label.SingleAnswer.q-checked > span::before {
+  background: #fff !important;
+  border-color: var(--gds-color-black-primary-default) !important;
+}
+
+.ChoiceStructure .LabelWrapper label.MultipleAnswer.q-checked > span::before,
+.Skin label.q-checkbox.q-checked::before {
+  background-color: transparent !important;
+  border-color: var(--gds-color-black-primary-default) !important;
 }
 
 .ChoiceStructure .LabelWrapper label.SingleAnswer.q-focused > span::before,
@@ -199,122 +297,69 @@ input[type="button"]:focus {
   box-shadow: 0 0 0 0.25rem #fd0 !important;
 }
 
-.ChoiceStructure .LabelWrapper label.SingleAnswer > span::before,
-.ChoiceStructure .LabelWrapper label.MultipleAnswer > span::before,
-.Skin label.q-radio,
-.Skin label.q-checkbox {
-  border-color: var(--gds-color-black-primary-default) !important;
-  left: 0;
-  height: 2.75rem !important;
-  width: 2.75rem !important;
-  box-sizing: border-box;
-  margin-top: 0 !important;
-  top: 0;
-  margin-right: 1rem !important;
-}
-
-.ChoiceStructure .LabelWrapper label.MultipleAnswer > span::before,
-.Skin label.q-checkbox::before {
-  border-radius: 0 !important;
-}
-
-.ChoiceStructure .LabelWrapper label.MultipleAnswer > span::after,
-.Skin label.q-checkbox::after {
-  content: "";
-  box-sizing: border-box;
-  position: absolute;
-  top: 0.75rem;
-  left: 0.75rem;
-  width: 1.25rem;
-  height: 0.75rem;
-  transform: rotate(-45deg);
-  border: solid;
-  border-top-color: red;
-  border-top-width: medium;
-  border-right-width: medium;
-  border-bottom-width: medium;
-  border-left-width: medium;
-  border-width: 0 0 0.25rem 0.25rem;
-  border-top-color: transparent;
-  opacity: 0;
-  background: transparent;
-}
-
-.ChoiceStructure .LabelWrapper label.SingleAnswer>span,
-.ChoiceStructure .LabelWrapper label.MultipleAnswer>span,
+.ChoiceStructure .LabelWrapper label.SingleAnswer > span,
+.ChoiceStructure .LabelWrapper label.MultipleAnswer > span,
 .Skin label.q-radio,
 .Skin label.q-checkbox {
   font-size: 1.188rem !important;
 }
 
 .ChoiceStructure .LabelWrapper label.SingleAnswer.q-checked.q-focused > span::before {
-  border-color: var(--gds-color-black-primary-default) !important;
   background: #fff !important;
-}
-
-.ChoiceStructure .LabelWrapper label.SingleAnswer.q-checked > span::before {
   border-color: var(--gds-color-black-primary-default) !important;
-  background: #fff !important;
 }
 
 .ChoiceStructure .LabelWrapper label.SingleAnswer.q-checked > span::after {
-  border-color: var(--gds-color-black-primary-default) !important;
   background: #fff !important;
+  border-color: var(--gds-color-black-primary-default) !important;
 }
 
 fieldset legend label.QuestionText,
 fieldset legend div.QuestionText {
   color: var(--gds-color-black-primary-default) !important;
-  font-weight: 700 !Important;
   font-size: 2.25rem !important;
-  line-height: 1.11111 !important;
+  font-weight: 700 !Important;
+  line-height: 1.1111 !important;
 }
 
-.QuestionBody .ChoiceStructure Input.InputText, 
+.QuestionBody .ChoiceStructure input.InputText,
 .Skin input[type="text"] {
   background-color: transparent !important;
+  background-color: #fff !important;
   border: 0.15rem solid var(--gds-color-black-primary-default) !important;
-  height: 2.5rem !important;
+  border-radius: 0;
   color: #000 !important;
+  height: 2.5rem !important;
   line-height: 1.25;
+  margin-top: 0;
   min-height: auto !important;
   width: 100% !important;
-  margin-top: 0;
-  border-radius: 0;
-  background-color:#ffffff !important;
 }
 
 .QuestionBody .ChoiceStructure textarea.InputText {
   background-color: transparent !important;
+  background-color: #fff !important;
   border: 0.15rem solid var(--gds-color-black-primary-default) !important;
-  height: 2.5rem !important;
+  border-radius: 0;
   color: #000 !important;
+  height: 2.5rem !important;
   line-height: 1.25;
+  margin-top: 0;
   min-height: 8em !important;
   width: 100% !important;
-  margin-top: 0;
-  border-radius: 0;
-  background-color:#ffffff !important;
 }
 
-.QuestionBody .ChoiceStructure Input.InputText:focus, 
+.QuestionBody .ChoiceStructure input.InputText:focus,
 .QuestionBody .ChoiceStructure textarea.InputText:focus {
+  box-shadow: inset 0 0 0 2px !important;
   outline: 3px solid var(--gds-color-yellow-primary-default) !important;
   outline-offset: 0 !important;
-  -webkit-box-shadow: inset 0 0 0 2px !important;
-  box-shadow: inset 0 0 0 2px !important;
-}
-
-.ChoiceStructure .LabelWrapper label.MultipleAnswer.q-checked > span::before,
-.Skin label.q-checkbox.q-checked::before {
-  border-color: var(--gds-color-black-primary-default) !important;
-  background-color: transparent !important;
 }
 
 .ChoiceStructure .LabelWrapper label.MultipleAnswer.q-checked > span::after,
 .Skin label.q-checkbox.q-checked::after {
-  opacity: 1;
   border-top-color: red;
+  opacity: 1;
 }
 
 .Skin label.q-radio.q-checked {
@@ -326,22 +371,26 @@ input[type="radio"]:focus + label.q-radio {
 }
 
 .Skin .QuestionText {
+  line-height: 1.25 !important;
   padding-bottom: 0 !important;
   padding-left: 0 !important;
   padding-right: 0 !important;
-  line-height: 1.25 !important;
 }
+
 .Skin .QuestionText p {
-  margin-top: 0.25rem;
-  margin-bottom: 1rem;
   line-height: 1.25;
+  margin-bottom: 1rem;
+  margin-top: 0.25rem;
 }
+
 .Skin .QuestionText p:last-child {
-  margin-bottom: 0;	
+  margin-bottom: 0;
 }
+
 .Skin .QuestionText a {
   color: #1d70b8;
 }
+
 .Skin .QuestionText a:hover {
   color: #003078;
 }
@@ -350,7 +399,8 @@ input[type="radio"]:focus + label.q-radio {
 .Skin .ChoiceStructure label.MultipleAnswer,
 .Skin .ChoiceStructure label.MultipleAnswer.q-focused,
 .Skin label.q-radio.q-checked,
-.Skin label.q-checkbox,.q-checked {
+.Skin label.q-checkbox,
+.q-checked {
   background: none !important;
   position: relative;
 }
@@ -358,24 +408,13 @@ input[type="radio"]:focus + label.q-radio {
 .Skin .ChoiceStructure label.SingleAnswer,
 .Skin .ChoiceStructure label.MultipleAnswer,
 .Skin .ChoiceStructure label.MultipleAnswer.q-focused {
-  padding:  0.5rem 1rem 0.25rem 3.75rem !important;
-}
-
-.Skin label.SingleAnswer > span::before,
-.Skin label.q-radio::before {
-  position: absolute !important;
-  width: 40px !important;
-  height: 40px !important;
-  box-sizing: border-box;
-  left: 1px !important;
-  top: -1px !important;
-  margin-top: auto !important;
+  padding: 0.5rem 1rem 0.25rem 3.75rem !important;
 }
 
 @media (max-width: 770px) {
   .Skin label.SingleAnswer > span::before,
   .Skin label.q-radio > span::before {
-      top: -3px !important;
+    top: -3px !important;
   }
 }
 
@@ -384,31 +423,6 @@ input[type="radio"]:focus + label.q-radio {
   box-shadow: 0 0 0 0.25rem var(--gds-color-yellow-primary-default) !important;
 }
 
-.Skin label.SingleAnswer.q-checked > span::before,
-.Skin label.SingleAnswer.q-checked.q-focused > span::before,
-.Skin label.q-radio.q-checked::before,
-.Skin label.q-radio.q-checked.q-focused::before {
-  background: none !important;
-  box-shadow: none !important;
-  -webkit-box-shadow: none !important;
-  animation: none !important;
-  border-width: 2px !important;
-}
-
-.Skin label.SingleAnswer.q-checked > span::after,
-.Skin label.SingleAnswer.q-checked.q-focused > span::after,
-.Skin label.q-radio.q-checked::after,
-.Skin label.q-radio.q-checked.q-focused::after {
-  content: "";
-  position: absolute;
-  left: 13px;
-  width: 0;
-  height: 0;
-  border: 0.625rem solid #0b0c0c;
-  border-radius: 50%;
-  background: #0b0c0c;
-  top: 0.7rem;
-}
 @media (max-width: 770px) {
   .Skin label.SingleAnswer.q-checked > span::after,
   .Skin label.SingleAnswer.q-checked.q-focused > span::after,
@@ -416,6 +430,7 @@ input[type="radio"]:focus + label.q-radio {
   .Skin label.q-radio.q-checked.q-focused::after {
     top: 9px;
   }
+
   .Skin div .QuestionBody {
     padding-bottom: 0 !important;
     padding-left: 0 !important;
@@ -428,30 +443,33 @@ input[type="radio"]:focus + label.q-radio {
 .Skin .QuestionOuter {
   position: relative;
 }
+
 .Skin .QuestionOuter.Highlight {
   padding-left: 1.25rem;
 }
-.Skin .QuestionOuter.Highlight:before {
-  content: '';
-  position:absolute;
-  top:0;
-  bottom: 1.5rem;
-  left: 0.25rem;
-  width: 0.25rem;
+
+.Skin .QuestionOuter.Highlight::before {
   background-color: #d4351c;
+  bottom: 1.5rem;
+  content: " ";
+  left: 0.25rem;
+  position: absolute;
+  top: 0;
+  width: 0.25rem;
 }
 
 .Skin textarea.InputText.FailedValidation,
 .Skin input.InputText.FailedValidation {
   border-color: #d4351c !important;
 }
+
 .Skin .ValidationError {
+  background: none !important;
   color: #d4351c !important;
   font-size: 1.1875rem;
-  line-height: 1.31579;
   font-weight: bold;
-  background: none !important;
-  margin-bottom: 0px !important;
+  line-height: 1.3158;
+  margin-bottom: 0 !important;
   text-indent: 0 !important;
 }
 
@@ -461,28 +479,16 @@ input[type="radio"]:focus + label.q-radio {
 
 @media (max-width: 48.125rem) {
   .Skin .SkinInner {
-    padding-top: 0 !important;
     padding-left: 0.75rem !important;
     padding-right: 0.75rem !important;
+    padding-top: 0 !important;
   }
 }
 
 /* Styling for questions with tables and sliders */
 
-th[scope="col"] .LabelWrapper,
-th[scope="col"].SubQuestionText,
-.slider-container label {
-  font-size: 1.5rem;
-  line-height: 1.25 !important;
-}
-
 th[scope="col"][class*="header-total"] {
   font-weight: bold;
-}
-
-th[scope="row"] label, th[scope="col"].AnswerText {
-  font-size: 1.1875rem !important;
-  line-height: 1.31579 !important;
 }
 
 .Skin td label.q-radio.q-checked::after {
@@ -513,28 +519,29 @@ th[scope="row"] label, th[scope="col"].AnswerText {
 
 /* Making the spacing on the footer more consistent with the header spacing */
 
-.Skin #BrandingFooter, .Skin #Footer {
+.Skin #BrandingFooter,
+.Skin #Footer {
   margin-top: 1rem !important;
 }
 
 /* Styling the plug section, the area below the footer */
 
 #Plug {
-  width: 48.125rem !important;
-  max-width: 95% !important;
   margin: auto !important;
+  max-width: 95% !important;
+  width: 48.125rem !important;
 }
 
 #Plug a {
-  transition: none !important;
-  padding: 0.25rem 0 !important;
-  margin-left: 0 !important;
-  width: 11em !important;
-  text-align: left !important;
   background: none !important;
+  border-radius: 0 !important;
   float: none !important;
   height: auto !important;
-  border-radius: 0 !important;
+  margin-left: 0 !important;
+  padding: 0.25rem 0 !important;
+  text-align: left !important;
+  transition: none !important;
+  width: 11em !important;
 }
 
 #Plug a:hover {
@@ -544,9 +551,9 @@ th[scope="row"] label, th[scope="col"].AnswerText {
 
 #Plug a:focus,
 #Plug a:active {
-  color: #000 !important;
   background-color: #fd0 !important;
   border-bottom: 0.125rem solid #0b0c0c;
+  color: #000 !important;
   outline: 0 !important;
   text-decoration: none !important;
 }
@@ -554,11 +561,11 @@ th[scope="row"] label, th[scope="col"].AnswerText {
 /* Utility class for hint text */
 
 .govuk-hint {
-  font-family: Arial, sans-serif;
-  font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.25;
-  display: block;
   color: #505a5f;
+  display: block;
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.25;
   margin-top: 1rem !important;
 }
